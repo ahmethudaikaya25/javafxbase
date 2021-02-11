@@ -13,18 +13,12 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        Parent root = null;
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(Main.class.getResource("/com.ahk/main.fxml"));
-        try {
-            root=fxmlLoader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        //Label label = new Label("ahk");
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/ahk/main.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Otel Otomasyonu");
         primaryStage.show();
+
     }
 }
